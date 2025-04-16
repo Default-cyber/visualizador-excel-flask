@@ -7,43 +7,30 @@ app = Flask(__name__)
 
 def gerar_site_estatico():
     try:
-        caminho_excel = os.path.join('data', 'dados.xlsx')
-        caminho_saida = os.path.join('docs', 'index.html')
-
-        if not os.path.exists(caminho_excel):
-            raise FileNotFoundError(f"Arquivo não encontrado: {caminho_excel}")
-
-        # Processamento dos dados
-        df = pd.read_excel(caminho_excel)
+        # Carregar e processar dados
+        df = pd.read_excel('data/dados.xlsx')
         df.fillna('-', inplace=True)
-        df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
 
-        # Geração da tabela
+        # Converter para HTML com classes para filtragem
         tabela_html = df.to_html(
-            classes='data-table',
+            classes='table table-striped table-bordered',
             index=False,
             border=0,
-            na_rep='-'
+            na_rep='-',
+            table_id='tabela-dados'
         )
 
-        # Geração do HTML
+        # Gerar arquivo estático
         with app.app_context():
             html = render_template('index.html', tabela=tabela_html)
             os.makedirs('docs', exist_ok=True)
-
-            with open(caminho_saida, 'w', encoding='utf-8') as f:
+            with open('docs/index.html', 'w', encoding='utf-8') as f:
                 f.write(html)
-
-            print("✅ Site gerado com sucesso!")
-            return True
-
+        return True
     except Exception as e:
-        print(f"❌ Erro: {str(e)}")
+        print(f"Erro: {str(e)}")
         return False
 
 
 if __name__ == '__main__':
-    if gerar_site_estatico():
-        print("Acesse o site em: docs/index.html")
-    else:
-        print("Corrija os erros antes de continuar")
+    gerar_site_estatico()
