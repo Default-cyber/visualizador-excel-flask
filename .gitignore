@@ -1,5 +1,16 @@
+# Python
 venv/
 __pycache__/
 *.pyc
+
+# Dados sensíveis
+data/*
+!data/dados.xlsx
+
+# Ambiente
 .env
 .DS_Store
+
+# Gerados
+/docs/
+!docs/index.html
