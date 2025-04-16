@@ -1,44 +1,54 @@
 body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    padding: 2rem;
 }
 
 .container {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    padding: 2rem;
-    margin-top: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 h1 {
     color: #2c3e50;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-.filtros {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
+    text-align: center;
     margin-bottom: 2rem;
+    font-weight: 600;
 }
 
-.table {
-    font-size: 0.95em;
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-.table thead th {
-    background-color: #3498db;
-    color: white;
-    border-color: #2980b9;
+.dataTables_filter input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
 }
 
-.table-hover tbody tr:hover {
-    background-color: #f1f8ff;
+.dataTables_length select {
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.filtro-coluna {
-    margin: 0.5rem;
-    flex: 1 1 200px;
+table.dataTable {
+    margin-top: 1rem !important;
+    border-collapse: collapse !important;
+}
+
+table.dataTable thead th {
+    background-color: #3498db !important;
+    color: white !important;
+    border: none !important;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #f1f8ff !important;
+}
+
+.dt-buttons {
+    margin-bottom: 1rem;
 }

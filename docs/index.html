@@ -2,13 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizador de Excel</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Interativo - Dados SUS</title>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-2.0.7/b-3.0.2/b-html5-3.0.2/b-print-3.0.2/datatables.min.css"/>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Dados do Excel</h1>
-        <table class="dataframe tabela-excel">
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h1 class="mb-0">Painel de Dados do SUS</h1>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="dataframe display compact nowrap" id="tabela-dados">
   <thead>
     <tr style="text-align: right;">
       <th>ANO</th>
@@ -29,7 +44,7 @@
       <td>1996</td>
       <td>0</td>
       <td>Fernando Henrique Cardoso</td>
-      <td>José Carlos Seixas/Carlos Albuquerque</td>
+      <td>\tJosé Carlos Seixas/Carlos Albuquerque</td>
       <td>46.0</td>
       <td></td>
       <td></td>
@@ -172,7 +187,7 @@
       <td>2007</td>
       <td>0</td>
       <td>Luiz Inácio Lula da Silva</td>
-      <td>Agenor Álvares</td>
+      <td>\tAgenor Álvares</td>
       <td>332.0</td>
       <td>0.45614</td>
       <td>104.0</td>
@@ -430,6 +445,16 @@
     </tr>
   </tbody>
 </table>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-2.0.7/b-3.0.2/b-html5-3.0.2/b-print-3.0.2/datatables.min.js"></script>
+
+    <!-- Configuração DataTables -->
+    <script src="static/script.js"></script>
 </body>
 </html>
