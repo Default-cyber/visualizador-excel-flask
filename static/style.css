@@ -1,54 +1,44 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
     background: #f8f9fa;
     padding: 2rem;
 }
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1800px;
 }
 
-h1 {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 600;
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
 }
 
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #dee2e6 !important;
+    border-radius: 5px !important;
 }
 
-.dataTables_filter input {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    margin-bottom: 1rem;
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border-color: #86b7fe !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
 }
 
-.dataTables_length select {
-    padding: 5px;
-    border-radius: 5px;
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    color: #212529 !important;
 }
 
-table.dataTable {
-    margin-top: 1rem !important;
-    border-collapse: collapse !important;
+#reset-filtros {
+    height: 38px;
 }
 
-table.dataTable thead th {
-    background-color: #3498db !important;
-    color: white !important;
-    border: none !important;
+.table thead th {
+    white-space: nowrap;
+    vertical-align: middle;
 }
 
-table.dataTable tbody tr:hover {
-    background-color: #f1f8ff !important;
-}
-
-.dt-buttons {
-    margin-bottom: 1rem;
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: auto;
 }
